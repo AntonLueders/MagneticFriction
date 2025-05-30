@@ -1,4 +1,9 @@
-function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, My_theta, Mz_theta] = CalcHysteresis(Angles, substrat_array, tilt_angle, ...
+% Calculates the sum of the torques affecting the two sublattices as well as the 
+% average magnetic field and the magnetization of the two sublattices.
+% The two sublattices are defined as for the simplified model and are inspired
+% by experimental observations.
+function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, ...
+    My_theta, Mz_theta] = CalcHysteresis(Angles, substrat_array, tilt_angle, ...
     magnetic_moment, magnetic_moment_sub, shift_z, pos_x, pos_y, ...
     substrat_x, substrat_y)
     
@@ -15,7 +20,6 @@ function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, My_theta
     B_pre = 1.25663706*10^(-6) / (4 * pi);
 
     % Magnetic moments
-
     m_x = magnetic_moment * cos(Angles) * cos(tilt_angle);
     m_y = magnetic_moment * cos(Angles) * sin(tilt_angle);
     m_z = magnetic_moment * (-sin(Angles));
@@ -27,8 +31,7 @@ function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, My_theta
     for i = 1:n
         for j = 1:m
 
-            % Magnetic fields resulting from substrat spins
-            
+            % Magnetic fields resulting from substrat spins            
             dis_x_substrat = pos_x(i,j) * ones(k,l) - substrat_x;
             dis_y_substrat = pos_y(i,j) * ones(k,l) - substrat_y;
             dis_z_substrat = shift_z * ones(k,l);
@@ -52,13 +55,17 @@ function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, My_theta
             By = By + sum(B_y_substrat,'all');
             Bz = Bz + sum(B_z_substrat,'all');
 
-            torque_x = m_y(i,j) * sum(B_z_substrat,'all') - m_z(i,j) * sum(B_y_substrat,'all');
-            torque_y = m_z(i,j) * sum(B_x_substrat,'all') - m_x(i,j) * sum(B_z_substrat,'all');
+            torque_x = m_y(i,j) * sum(B_z_substrat,'all') ...
+	         - m_z(i,j) * sum(B_y_substrat,'all');
+            torque_y = m_z(i,j) * sum(B_x_substrat,'all') ... 
+	         - m_x(i,j) * sum(B_z_substrat,'all');
 
 	    if sum(i == [1 3 5 7]) == 1
-              T_phi = T_phi - sin(tilt_angle) * torque_x + cos(tilt_angle) * torque_y;
+              T_phi = T_phi - sin(tilt_angle) * torque_x ...
+	         + cos(tilt_angle) * torque_y;
 	    else
-	      T_theta = T_theta - sin(tilt_angle) * torque_x + cos(tilt_angle) * torque_y;
+	      T_theta = T_theta - sin(tilt_angle) * torque_x ...
+                 + cos(tilt_angle) * torque_y;
 	    end
 
         end
@@ -71,12 +78,17 @@ function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, My_theta
     By = By / (n * m);
     Bz = Bz / (n * m);
 
-    Mx_phi = sum(m_x(1:2:7,:),'all') / (length(1:2:7) * m) / magnetic_moment;
-    My_phi = sum(m_y(1:2:7,:),'all') / (length(1:2:7) * m) / magnetic_moment;
-    Mz_phi = sum(m_z(1:2:7,:),'all') / (length(1:2:7) * m) / magnetic_moment;
+    Mx_phi = sum(m_x(1:2:7,:),'all') / (length(1:2:7) * m)...
+       / magnetic_moment;
+    My_phi = sum(m_y(1:2:7,:),'all') / (length(1:2:7) * m)...
+       / magnetic_moment;
+    Mz_phi = sum(m_z(1:2:7,:),'all') / (length(1:2:7) * m)...
+       / magnetic_moment;
 
-    Mx_theta = sum(m_x(2:2:7,:),'all') / (length(2:2:7) * m) / magnetic_moment;
-    My_theta = sum(m_y(2:2:7,:),'all') / (length(2:2:7) * m) / magnetic_moment;
-    Mz_theta = sum(m_z(2:2:7,:),'all') / (length(2:2:7) * m) / magnetic_moment;
-    
+    Mx_theta = sum(m_x(2:2:7,:),'all') / (length(2:2:7) * m)...
+       / magnetic_moment;
+    My_theta = sum(m_y(2:2:7,:),'all') / (length(2:2:7) * m)...
+       / magnetic_moment;
+    Mz_theta = sum(m_z(2:2:7,:),'all') / (length(2:2:7) * m)...
+       / magnetic_moment;    
 end
