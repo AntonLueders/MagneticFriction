@@ -1,3 +1,5 @@
+% Calculates the magnetic interactions between the slider and the substrate
+% This means that the magnetic friction is calculated in this function
 function [Fx, Fy, Fz] = CalcForce(Angles, substrat_array, tilt_angle, ...
     magnetic_moment, magnetic_moment_sub, shift_z, pos_x, pos_y, ...
     substrat_x, substrat_y)
@@ -12,7 +14,6 @@ function [Fx, Fy, Fz] = CalcForce(Angles, substrat_array, tilt_angle, ...
     F_pre = 1.25663706*10^(-6) * 3 / (4 * pi);
 
     % Magnetic moments
-
     m_x = magnetic_moment * cos(Angles) * cos(tilt_angle);
     m_y = magnetic_moment * cos(Angles) * sin(tilt_angle);
     m_z = magnetic_moment * (-sin(Angles));
@@ -56,8 +57,7 @@ function [Fx, Fy, Fz] = CalcForce(Angles, substrat_array, tilt_angle, ...
             F_y(i,j) = 0;
             F_z(i,j) = 0;
 
-            % Calculation of distance vector
-            
+            % Calculation of distance vector            
             dis_x_substrat = pos_x(i,j) * ones(k,l) - substrat_x;
             dis_y_substrat = pos_y(i,j) * ones(k,l) - substrat_y;
             dis_z_substrat = shift_z * ones(k,l);
@@ -65,7 +65,6 @@ function [Fx, Fy, Fz] = CalcForce(Angles, substrat_array, tilt_angle, ...
                 dis_z_substrat.^2).^(1/2);
 
             % Calculation of the dot products in the force equation
-
             m1_dot_r = m_x_substrat .* dis_x_substrat ...
                 + m_y_substrat .* dis_y_substrat ...
                 + m_z_substrat .* dis_z_substrat;
@@ -79,7 +78,6 @@ function [Fx, Fy, Fz] = CalcForce(Angles, substrat_array, tilt_angle, ...
                 + m_z(i,j) * m_z_substrat;
 
             % Each force acting on spin i,j
-
             Fx_all = F_pre ./ dis_substrat.^5 .* (m1_dot_r .* m_x(i,j) ...
                 + m2_dot_r .* m_x_substrat ...
                 + m1_dot_m2 .* dis_x_substrat ....
@@ -97,7 +95,6 @@ function [Fx, Fy, Fz] = CalcForce(Angles, substrat_array, tilt_angle, ...
                 .* dis_z_substrat);
 
             % Matrix that contains the total forces acting on the spins
-
             magnetic_forces_x(i,j) = sum(Fx_all,'all') + sum(F_x,'all');
             magnetic_forces_y(i,j) = sum(Fy_all,'all') + sum(F_y,'all');
             magnetic_forces_z(i,j) = sum(Fz_all,'all') + sum(F_z,'all');
@@ -106,7 +103,6 @@ function [Fx, Fy, Fz] = CalcForce(Angles, substrat_array, tilt_angle, ...
     end
 
     % Total force acting on the probe
-
     Fx = sum(magnetic_forces_x, 'all');
     Fy = sum(magnetic_forces_y, 'all');
     Fz = sum(magnetic_forces_z, 'all');
