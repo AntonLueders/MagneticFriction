@@ -14,7 +14,7 @@
 %          BioNano-Physics                                                %
 %          Univesity of Innsbruck                                         %
 %                                                                         %
-%          Last edited: 05.03.2025                                        %
+%          Last edited: 30.05.2025                                        %
 %                                                                         %
 %          V2.0.0                                                         %
 %                                                                         %
@@ -182,7 +182,7 @@ for scan=1:length(scan_value)
         magnet_array_0 = magnet_array_0_temp;
         magnet_array_1 = magnet_array_1_temp;
     
-% Approximation of the velocity ==========================================%
+% Approximation of the angular velocities ================================%
     
         angular_velocity = CalcVelocity(magnet_array_0, ... 
             magnet_array_1, time_step);
