@@ -1,3 +1,5 @@
+% Calculates the total magnetic energy of the interactions between the two 
+% layers and the total internal magnetic energy of the slider
 function [E_sub, E_probe] = CalcEnergy(Angles, substrat_array, tilt_angle, ...
     magnetic_moment, magnetic_moment_sub, shift_z, pos_x, pos_y, ...
     substrat_x, substrat_y)
@@ -11,7 +13,6 @@ function [E_sub, E_probe] = CalcEnergy(Angles, substrat_array, tilt_angle, ...
     B_pre = 1.25663706*10^(-6) / (4 * pi);
 
     % Magnetic moments
-
     m_x = magnetic_moment * cos(Angles) * cos(tilt_angle);
     m_y = magnetic_moment * cos(Angles) * sin(tilt_angle);
     m_z = magnetic_moment * (-sin(Angles));
@@ -23,8 +24,7 @@ function [E_sub, E_probe] = CalcEnergy(Angles, substrat_array, tilt_angle, ...
     for i = 1:n
         for j = 1:m
 
-            % Magnetic fields resulting from substrat spins
-            
+            % Magnetic fields resulting from substrate spins            
             dis_x_substrat = pos_x(i,j) * ones(k,l) - substrat_x;
             dis_y_substrat = pos_y(i,j) * ones(k,l) - substrat_y;
             dis_z_substrat = shift_z * ones(k,l);
@@ -44,9 +44,11 @@ function [E_sub, E_probe] = CalcEnergy(Angles, substrat_array, tilt_angle, ...
                 * ((3 * dis_z_substrat .* m_dot_r_substrat) ...
                 ./ dis_substrat.^5 - m_z_substrat ./ dis_substrat.^3);
 
-            E_sub = E_sub - (m_x(i,j) * sum(B_x_substrat,'all') + m_y(i,j) * sum(B_y_substrat,'all') ...
+            E_sub = E_sub - (m_x(i,j) * sum(B_x_substrat,'all') ...
+                + m_y(i,j) * sum(B_y_substrat,'all') ...
                 + m_z(i,j) * sum(B_z_substrat,'all'));
 
+            % Magnetic fields resulting from neighboring spins
             dis_x = pos_x(i,j)*ones(n,m) - pos_x;
             dis_y = pos_y(i,j)*ones(n,m) - pos_y;
             dis = (dis_x.^2 + dis_y.^2).^(1/2);
@@ -65,7 +67,8 @@ function [E_sub, E_probe] = CalcEnergy(Angles, substrat_array, tilt_angle, ...
             B_y(i,j) = 0;
             B_z(i,j) = 0;
 
-            E_probe = E_probe - (m_x(i,j) * sum(B_x,'all') + m_y(i,j) * sum(B_y,'all') ...
+            E_probe = E_probe - (m_x(i,j) * sum(B_x,'all') ...
+                + m_y(i,j) * sum(B_y,'all') ...
                 + m_z(i,j) * sum(B_z,'all'));
         end
     end    
