@@ -1,3 +1,6 @@
+% Calculates the total torque affecting the moments of the slider.
+% This torque is needed for the Verlet algorithm to update the
+% orientations.
 function [torques] = CalcTorque(Angles, Velocities, ...
     friction_coefficient, pos_x, pos_y, substrat_array, substrat_x, ...
     substrat_y, shift_z, tilt_angle, magnetic_moment, ...
@@ -12,6 +15,7 @@ function [torques] = CalcTorque(Angles, Velocities, ...
 
     B_pre = 1.25663706*10^(-6) / (4 * pi);
 
+    % Magnetic moments
     m_x = magnetic_moment * cos(Angles) * cos(tilt_angle);
     m_y = magnetic_moment * cos(Angles) * sin(tilt_angle);
     m_z = magnetic_moment * (-sin(Angles));
@@ -24,7 +28,6 @@ function [torques] = CalcTorque(Angles, Velocities, ...
         for j = 1:m
 
             % Magnetic field resulting from probe spins
-
             dis_x = pos_x(i,j)*ones(n,m) - pos_x;
             dis_y = pos_y(i,j)*ones(n,m) - pos_y;
             dis = (dis_x.^2 + dis_y.^2).^(1/2);
@@ -43,8 +46,7 @@ function [torques] = CalcTorque(Angles, Velocities, ...
             B_y(i,j) = 0;
             B_z(i,j) = 0;
 
-            % Magnetic fields resulting from substrat spins
-            
+            % Magnetic fields resulting from substrat spins            
             dis_x_substrat = pos_x(i,j) * ones(k,l) - substrat_x;
             dis_y_substrat = pos_y(i,j) * ones(k,l) - substrat_y;
             dis_z_substrat = shift_z * ones(k,l);
@@ -64,8 +66,7 @@ function [torques] = CalcTorque(Angles, Velocities, ...
                 * ((3 * dis_z_substrat .* m_dot_r_substrat) ...
                 ./ dis_substrat.^5 - m_z_substrat ./ dis_substrat.^3);
 
-            % Calculation of the total torque
-            
+            % Calculation of the total torque            
             torque_x = m_y(i,j) * (sum(B_z,'all') ...
                 + sum(B_z_substrat,'all')) - m_z(i,j) * (sum(B_y,'all') ...
                 + sum(B_y_substrat,'all'));
