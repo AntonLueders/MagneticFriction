@@ -15,6 +15,7 @@ The simulation software reproduces the qualitative and quantitative results of t
  - [Contents of the particular files](#Contents)
  - [Disclaimer](#Disclaimer)
  - [Additional folders independent of MagneticFriction](#Simplified)
+ - [Cite this software](#Cite)
  
  <a id="Requirements"></a>
 # Requirements
@@ -137,3 +138,10 @@ Note that the presented code is **not** an ongoing software project with active 
 # Additional folders independent of MagneticFriction
 
 This repository also contains the folder **SimplifiedModel** with Matlab code to solve the simplified model (as introduced in [1]) numerically. These files are not related to the main simulation code. For questions regarding the numerical solution of the simplified model, please contact the corresponding authors.
+
+ <a id="Cite"></a>
+# Cite this software
+
+If you use this simulation software or parts of it, please cite
+
+[1] *Anomalous Friction Controlled by Collective Order in Two-Dimensional Magnetically Responsive Surfaces* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
