@@ -37,7 +37,7 @@ for k = 1:length(c_int)
         omega, gamma);
     [t, angle_data] = ode45(ode, tspan, angle0);
     
-    % Rolling average to remove "numerical noise". Can be left out-
+    % Moving average to remove "numerical noise". Can be left out-
     angle_data = movmean(angle_data,1001);
     
     angle_data = angle_data(t>4*pi/omega & t <= 6*pi/omega,:);
@@ -53,7 +53,7 @@ for k = 1:length(c_int)
     avg_order_parameter = sum(order_parameter) / length(order_parameter);
 
     Delta_Angle = angle_data(2:end,:) - angle_data(1:end-1,:);
-    % Rolling average to remove "numerical noise". Can be left out.
+    % Moving average to remove "numerical noise". Can be left out.
     Delta_Angle = movmean(Delta_Angle, 501);
  
     % Calculation of the dissipated energy
