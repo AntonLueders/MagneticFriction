@@ -4,11 +4,11 @@ function dangledt = angle_diff_eq(t, angle, a, b, c, omega, gamma)
     % Substrate term
     % The system is "equilibrated" for t = 2*pi/omega
     if t < 2 * pi / omega
-        coup1 = -c * sin(angle(1)) / gamma;
-        coup2 = -c * sin(angle(2)) / gamma;
+        coup1 = c * sin(angle(1)) / gamma;
+        coup2 = c * sin(angle(2)) / gamma;
     else
-        coup1 = -c * sin(angle(1) + omega * (t - 2 * pi/omega)) / gamma;
-        coup2 = -c * sin(angle(2) + omega * (t - 2 * pi/omega)) / gamma;
+        coup1 = c * sin(angle(1) - omega * (t - 2 * pi/omega)) / gamma;
+        coup2 = c * sin(angle(2) - omega * (t - 2 * pi/omega)) / gamma;
     end
     
     % Self term + sublattice interaction term + substrate term
