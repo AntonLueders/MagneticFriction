@@ -44,8 +44,8 @@ for k = 1:length(c_int)
     t = t(t>4*pi/omega & t <= 6*pi/omega);
     
     % Calculation of the substrate torque
-    friction_phi = c * sin(angle_data(:,1) + omega * (t-2*pi/omega));
-    friction_theta = c * sin(angle_data(:,2) + omega * (t-2*pi/omega));
+    friction_phi = - c * sin(angle_data(:,1) - omega * (t-2*pi/omega));
+    friction_theta = - c * sin(angle_data(:,2) - omega * (t-2*pi/omega));
 
     % Calculation of the order parameter
     order_parameter = sin(angle_data(:,1)) .* sin(angle_data(:,2)) ...
