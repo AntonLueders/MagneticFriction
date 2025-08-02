@@ -4,7 +4,7 @@ MagneticFriction is a many-body simulation software that calculates the magnetic
 
 [1] *Nonmonotonic Magnetic Friction from Collective Rotor Dynamics* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
 
-The simulation software reproduces the qualitative and quantitative results of the experiments of [1] remarkably well.  All information and methods employed by MagneticFriction are described in detail in the supporting information of [1]. While MagneticFriction can be used to repeat the corresponding simulations, we strongly encourage a full, independent reproduction using the information in said supplemental information. 
+The simulation software reproduces the qualitative and quantitative results of the experiments of [1] remarkably well.  All information and methods employed by MagneticFriction are described in detail in the supporting information of [1]. While MagneticFriction can be used to repeat the corresponding simulations, we strongly encourage a full independent reproduction using the information in said supplemental information. 
 
 # Table of content:
  - [Requirements](#Requirements)
