@@ -86,7 +86,7 @@ for scan=1:length(scan_value)
 .
 .
 
-**Notes:** The parameters in the example are matched to the experiments of [1]. Here, **substrat_dim_x** and **substrate_dim_y** are given in units of the slider array size. They control the number of additional layers of arrays of moments that are added to the substrate. A value of 4 means that the substrate has a width of 5 slider-sized layers of moments, where the slider is centered in the middle. Please only use an even number for these parameters.
+**Notes:** The parameters in the example are matched to the experiments of [1]. Here, **substrat_dim_x** and **substrate_dim_y** are given in units of the slider array size. They control the number of additional layers of arrays of moments that are added to the substrate. A value of 4 means that the substrate has a width of 5 slider-sized layers of moments, where the slider is centered in the middle. Please only use even numbers for these parameters.
  
  <a id="What"></a>
  # What MagneticFriction does
