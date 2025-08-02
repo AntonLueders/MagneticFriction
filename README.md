@@ -142,4 +142,4 @@ This repository also contains the folder **SimplifiedModel** with Matlab code to
 
 If you use this simulation software or parts of it, please cite
 
-[1] *Anomalous Friction Controlled by Collective Order in Two-Dimensional Magnetically Responsive Surfaces* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
+[1] *Nonmonotonic Magnetic Friction from Collective Rotor Dynamics* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
