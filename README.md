@@ -2,7 +2,7 @@
 
 MagneticFriction is a many-body simulation software that calculates the magnetic friction resulting from the relative motion of two periodic magnetic layers (one with moments that can rotate around an axis perpendicular to the movement direction). It utilizes the Verlet algorithm of Molecular dynamics simulations in combination with a Stokes law model for the single particle dissipation and integrates the rotations of the moments of the slider, which is the layer with the moveable moments. MagneticFriction is a part of the supporting information of 
 
-[1] *Anomalous Friction Controlled by Collective Order in Two-Dimensional Magnetically Responsive Surfaces* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
+[1] *Nonmonotonic Magnetic Friction from Collective Rotor Dynamics* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
 
 The simulation software reproduces the qualitative and quantitative results of the experiments of [1] remarkably well.  All information and methods employed by MagneticFriction are described in detail in the supporting information of [1]. While MagneticFriction can be used to repeat the corresponding simulations, we strongly encourage a full, independent reproduction using the information in said supplemental information. 
 
