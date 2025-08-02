@@ -1,6 +1,6 @@
 # Introduction
 
-MagneticFriction is a many-body simulation software that calculates the magnetic friction resulting from the relative motion of two periodic magnetic layers (one with moments that can rotate around an axis perpendicular to the movement direction). It utilizes the Verlet algorithm of Molecular dynamics simulations in combination with a Stokes law model for the single particle dissipation and integrates the rotations of the moments of the slider, which is the layer with the moveable moments. MagneticFriction is a part of the supporting information of 
+MagneticFriction is a many-body simulation software that calculates the magnetic friction resulting from the relative motion of two periodic magnetic layers (one with moments that can rotate around an axis perpendicular to the movement direction). It utilizes the Verlet algorithm known from Molecular dynamics simulations in combination with a Stokes law model for the single particle dissipation and integrates the rotations of the moments of the slider, which is the layer with the moveable moments. MagneticFriction is a part of the supporting information of 
 
 [1] *Nonmonotonic Magnetic Friction from Collective Rotor Dynamics* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
 
