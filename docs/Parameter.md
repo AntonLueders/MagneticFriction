@@ -81,6 +81,6 @@ The particular parameters that must be set to succesfully perform a simulation w
 - **time_step:** Length of the simulation step.
 - **max_time:** Maximum time of the simulations in seconds (time of the simulation, not real time). The simulation ends when it reaches *max_time*.
 - **start_t_time:** Equilibration time. Until *start_t_time*, the slider idles at the initial position. After *start_t_time*, the simulation starts.
+- **scan_value:** Interval of different slider-substrate separations for which the simulations should be performed.
 
 [1] *Nonmonotonic Magnetic Friction from Collective Rotor Dynamics* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
-- **scan_value:** Interval of different slider-substrate separations for which the simulations should be performed.
