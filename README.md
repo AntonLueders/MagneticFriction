@@ -133,7 +133,7 @@ MagneticFriction consists of multiple Matlab functions stored in their individua
 - **CalcForce.m** Calculates the total magnetic forces acting on the slider. The average of the x-component of this force is the magnetic friction.
 - **CalcEnegery.m** Determines the total internal interaction energy of the slider and the total energy of the interactions between the slider and the substrate.
 - **CalcHysteresis.m** Calculates the sum of the torques affecting the moments due to the substrate, the magnetization of the slider, and the average substrate field.
-- **CalcTorqueGrid.m** Evaluates and stores the total torque acting on each moment of the slider separately. 
+- **CalcTorqueGrid.m** Evaluates and stores the total substrate torque acting on each moment of the slider separately. 
 
 To understand how MagneticFriction works, it is suggested to start by reading the main simulation loop in **MagneticArray.m**. If details for the specific function used in the main loop are needed, it is then possible to navigate to the correct subfile that contains the particular function.
 
