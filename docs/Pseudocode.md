@@ -1,5 +1,7 @@
 ```pseudo
 
+BEGIN
 test
+END
 
 ```
