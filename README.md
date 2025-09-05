@@ -144,6 +144,8 @@ A detailed explanation of the parameters needed to run the simulations are given
 
 Pseudocode for MagneticFriction can be found in [Pseudocode](docs/Pseudocode.md).
 
+Please read the **Method section** and **Section S14** of the supporting information of [1] for information on the employed model, the simulation algorithms, and the physics behind **MagenticFriction**. 
+
  <a id="Disclaimer"></a>
 # Disclaimer
 
