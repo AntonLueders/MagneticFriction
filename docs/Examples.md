@@ -12,16 +12,20 @@ If the simulations are successful, three **.mat** files can be found in the fold
 
 **2) Calculate the average magnetic friction**
 
-Copy the file **Example_Avg_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average magnetic frictions corresponding to the **.mat** files. For instance, if the separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -0.21N, 1.33N, and -0.0045N, respectively. 
+Copy the file **Example_Avg_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average magnetic frictions corresponding to the **.mat** files. For instance, if the slider-substrate separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -0.21N, 1.33N, and -0.0045N, respectively. 
 
 **3) Calculate the average total friction**
 
-Copy the file **Example_Total_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average frictions (magnetic and mechanical contributions) corresponding to the **.mat** files. For instance, if the separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -1.73N, -1.99N, and -0.36N, respectively. 
+Copy the file **Example_Total_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average frictions (magnetic and mechanical contributions) corresponding to the **.mat** files. For instance, if the slider-substrate separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -1.73N, -1.99N, and -0.36N, respectively. 
 
 **4) Plot force over time**
 
-Copy the file **Example_Force_Over_Time.m** (see example folder) into the folder with the **.mat** files and execute the MATLAB script. If the same separations as in the other examples are used, three plots should pop up, each showing the x-component of the total interaction force between the slider and the substrate. The x-axis measures time in seconds, and the y-axis corresponds to force in Newtons.
+Copy the file **Example_Force_Over_Time.m** (see example folder) into the folder with the **.mat** files and execute the MATLAB script. If the same slider-substrate separations as in the other examples are used, three plots should pop up, each showing the x-component of the total interaction force between the slider and the substrate. The x-axis measures time in seconds, and the y-axis corresponds to force in Newtons.
 
 **5) Calculate the average order parameter**
 
-Copy the file **Example_Order_Parameter.m** (see example folder) into the folder with the simulation results. Run the MATLAB script. If everything works, the MATLAB console gives the average order parameter corresponding to the different **.mat** files. If the separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly 1.0, 0.67, -0.97, respectively.
+Copy the file **Example_Order_Parameter.m** (see example folder) into the folder with the simulation results. Run the MATLAB script. If everything works, the MATLAB console gives the average order parameter corresponding to the different **.mat** files. If the slider-substrate separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly 1.00, 0.67, -0.97, respectively.
+
+**6) Plot orientation over time**
+
+Copy the file **Example_Angle_Over_Time.m** (see example folder) into the folder with the **.mat** files and execute the example MATLAB script. If the same slider-substrate separations as in the other examples are used, three plots should pop up. Each of these plots shows the orientation angle of the magnetic moment in the middle of the slider. On the x-axis, the time is given in seconds. On the y-axis, the angles are depicted. Note that the angle is always folded back to the interval [0,2$\\pi$].
