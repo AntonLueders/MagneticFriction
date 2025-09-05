@@ -1,4 +1,4 @@
-Here, we present heavily simplified pseudocode for the particular Matlab files of **MagneticFriction** to highlight the basic principles behind the simulations. However, please see the [Readme](../README.md) and the supporting information of [1] for more informations.
+Here, we present heavily simplified pseudocode for the particular Matlab files of **MagneticFriction** to highlight the basic principles behind the simulations. However, please see the [README](../README.md) and the supporting information of [1] for more informations.
 
 
 
@@ -27,7 +27,7 @@ for (slider-substrate separation) in scan_value
 
         if observables should be calculated {
 
-            if time matches time for output {
+            if time matches (time for write output) {
 
                 calculate observables using CalcForce.m, CalcTorqueGrid.m, CalcHysteresis.m, and CalcEnergy.m
             }    
