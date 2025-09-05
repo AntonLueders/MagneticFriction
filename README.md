@@ -4,7 +4,7 @@ MagneticFriction is a many-body simulation software that calculates the magnetic
 
 [1] *Nonmonotonic Magnetic Friction from Collective Rotor Dynamics* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
 
-The simulation software reproduces the qualitative and quantitative results of the experiments of [1] remarkably well.  All information and methods employed by MagneticFriction are described in detail in the supporting information of [1]. While MagneticFriction can be used to repeat the corresponding simulations, we strongly encourage a full independent reproduction using the information in said supplemental information. 
+The simulation software reproduces the qualitative and quantitative results of the experiments of [1] remarkably well. All information and methods employed by MagneticFriction are described in detail in the supporting information of [1]. While MagneticFriction can be used to repeat the corresponding simulations, we strongly encourage a full independent reproduction using the information in said supplemental information. 
 
 # Table of content:
  - [Requirements](#Requirements)
@@ -87,7 +87,7 @@ for scan=1:length(scan_value)
 .
 .
 
-**Notes:** The parameters in the example are matched to the experiments of [1] (the shaft friction and the number of moments on the substrate are chosen freely). Also, *substrat_dim_x* and *substrate_dim_y* are given in units of the slider array size. They control the number of additional layers of arrays of moments that are added to the substrate. A value of 4 means that the substrate has a width of 5 slider-sized layers of moments, where the slider is centered in the middle at the start of the simulation. Please only use even numbers for these parameters. See [further information](#Info) for more details regarding the parameters.
+**Notes:** The parameters in the example are matched to the experiments of [1] (the shaft friction and the number of moments on the substrate are free parameters). Also, *substrat_dim_x* and *substrate_dim_y* are given in units of the slider array size. They control the number of additional layers of arrays of moments that are added to the substrate. A value of 4 means that the substrate has a width of 5 slider-sized layers of moments, where the slider is centered in the middle at the start of the simulation. Please only use even numbers for these parameters. See [further information](#Info) for more details regarding the parameters.
 
 Using the example parameters as listed above, simulations are performed for slider-substrate separations between 5mm and 13mm in steps of 0.1mm (see *scan_value*). Consequently, the sliding process is simulated 80 times, resulting in a total simulation time of 20 hours (real time) on an *AMD Ryzen 7 PRO 7730U* (for which this test was conducted). For each slider-substrate separation, roughly 900 seconds are needed.
  
