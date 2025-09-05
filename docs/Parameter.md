@@ -1,4 +1,4 @@
-As written in the [Readme](../README.md), the input parameters of the simulations are written within the header of the main file **MagneticArray.m** and listed in the following form:
+As written in the [README](../README.md), the input parameters of the simulations are written within the header of the main file **MagneticArray.m** and listed in the following form:
 
 ```
 %%=======================================================================%%
