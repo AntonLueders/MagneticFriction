@@ -2,7 +2,7 @@ Here, we present some simple examples, which describe how to run **MagneticFrict
 
 1) Performing your first simulations with **MagneticFriction**
 
-As an example for the execution of the simulations, the following steps describe how to run numerical calculations for three distinct slider-substrate separations (6.5mm, 8.8mm, and 11.0mm). First, download all **.m** files corresponding to **MagneticFriction** from this repository into a single folder. Then, open **MagneticArray.m** with Matlab. Go to line 82 and adjust the variable *scan_value* so that the line reads:
+As an example for the execution of the simulations, the following steps describe how to run numerical calculations for three distinct slider-substrate separations (6.5mm, 8.5mm, and 11.0mm). First, download all **.m** files corresponding to **MagneticFriction** from this repository into a single folder. Then, open **MagneticArray.m** with Matlab. Go to line 82 and adjust the variable *scan_value* so that the line reads:
 ```
 scan_value = [0.0065, 0.0085, 0.011];
 ```
@@ -10,4 +10,12 @@ Here, *scan_value* represents the three separations for which the calculations a
 
 If the simulations are successful, three **.mat** files can be found in the folder that contains **MagneticArray.m** (*height0.0065.mat*, *height0.0085.mat*, and *height0.011.mat*). These files contain the output data and can be utilized for further analysis. The simulation program is expected to run roughly 900 seconds per separation on an *AMD Ryzen 7 PRO 7730U*.
 
-2) 
+2) Calculate the average magnetic friction
+
+Copy the file **Example_Avg_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average magnetic frictions corresponding to the **.mat** files. For instance, if the separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -0.21N, 1.33N, and -0.0045N, respectively. 
+
+3) Calculate the average total friction
+
+Copy the file **Example_Total_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average frictions (magnetic and mechanical contributions) corresponding to the **.mat** files. For instance, if the separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -1.73N, -1.99N, and -0.36N, respectively. 
+
+4) 
