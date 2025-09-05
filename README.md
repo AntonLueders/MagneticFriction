@@ -26,7 +26,7 @@ The simulation software is written as a MATLAB script, and it can be started as 
  <a id="Use"></a>
 # How to use MagneticFriction
 
-To run the simulation software, all files must be in the same folder. The main script is **MagneticArray.m**, which can be started via MATLAB. The parameters for the simulation can be adjusted at the top of **MagneticArray.m**. The ones used to generate the data for [1] are given below as an example.
+To run the simulation software, all files must be in the same folder. The main script is **MagneticArray.m**, which must be started via MATLAB. The parameters for the simulation can be adjusted at the top of **MagneticArray.m**. The ones used to generate the data for [1] are given below as an example.
 
 ```
 %%=======================================================================%%
