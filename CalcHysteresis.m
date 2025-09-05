@@ -55,6 +55,9 @@ function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, ...
             By = By + sum(B_y_substrat,'all');
             Bz = Bz + sum(B_z_substrat,'all');
 
+            torque_x = m_y(i,j) * sum(B_z_substrat,'all') - m_z(i,j) * sum(B_y_substrat,'all');
+            torque_y = m_z(i,j) * sum(B_x_substrat,'all') - m_x(i,j) * sum(B_z_substrat,'all');
+
 		    if sum(i == 1:2:n) == 1
 	              T_phi = T_phi - sin(tilt_angle) * torque_x ...
 		         	 + cos(tilt_angle) * torque_y;
@@ -87,4 +90,5 @@ function [T_phi, T_theta, Bx, By, Bz, Mx_phi, My_phi, Mz_phi, Mx_theta, ...
     Mz_theta = sum(m_z(2:2:n,:),'all') / (length(2:2:n) * m)...
        / magnetic_moment;    
 end
+
 
