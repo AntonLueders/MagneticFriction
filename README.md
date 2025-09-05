@@ -87,9 +87,11 @@ for scan=1:length(scan_value)
 .
 .
 
-**Notes:** The parameters in the example are matched to the experiments of [1] (the shaft friction and the number of moments on the substrate are free parameters). Also, *substrat_dim_x* and *substrate_dim_y* are given in units of the slider array size. They control the number of additional layers of arrays of moments that are added to the substrate. A value of 4 means that the substrate has a width of 5 slider-sized layers of moments, where the slider is centered in the middle at the start of the simulation. Please only use even numbers for these parameters. See [further information](#Info) for more details regarding the parameters.
+**Notes:** The parameters in the example are matched to the experiments of [1] (the shaft friction and the number of moments on the substrate are free parameters). Also, *substrat_dim_x* and *substrate_dim_y* set the number of substrate moments in multiples of the slider array size. In detail, they control the number of additional slider-sized layers of moments that are added to the substrate. A value of 4 means that the substrate has a width of 5 slider-sized layers of moments, where the slider is centered in the middle at the start of the simulation. Please only use even numbers for these parameters. 
 
-Using the example parameters as listed above, simulations are performed for slider-substrate separations between 5mm and 13mm in steps of 0.1mm (see *scan_value*). Consequently, the sliding process is simulated 80 times, resulting in a total simulation time of 20 hours (real time) on an *AMD Ryzen 7 PRO 7730U* (for which this test was conducted). For each slider-substrate separation, roughly 900 seconds are needed.
+Using the example parameters listed above, simulations are performed for slider-substrate separations ranging from 5mm to 13mm in increments of 0.1mm (see *scan_value*). Consequently, the sliding process is simulated 80 times, resulting in a total simulation time of 20 hours (real time) on an *AMD Ryzen 7 PRO 7730U* (for which this test was conducted). For each slider-substrate separation, roughly 900 seconds are needed.
+
+See [further information](#Info) for more details regarding the parameters.
  
  <a id="What"></a>
  # What MagneticFriction does
