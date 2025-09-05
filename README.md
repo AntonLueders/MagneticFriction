@@ -111,6 +111,8 @@ All data are given in SI units. For each separation between the slider and the s
 - the particular subsrate torques acting on the different moments of the slider (**torque_grid**),
 - all information needed to extract the sum of the torques and the torque hysteresis (**hysteresis** - sum of torques acting on moments of sublattice one, sum of torque acting on sublattice two, x-component average magnetic field, y-component average magnetic field, z-component average magnetic field, x-component of the magnetization of sublattice one, y-component of the magnetization of sublattice one, z-component of the magnetization of sublattice one, x-component of the magnetization of sublattice two, y-component of the magnetization of sublattice two, z-component of the magnetization of sublattice two; see [1] for information on how the slider is divided in two sublattices and the simplified model),
 - and the energy terms of the system (**energy** - internal magnetic energy, total interaction energy between the slider and the substrate).
+
+See also [further information](#Info) for examples on how to analyze the output data from **MagneticFriction**.
  
   <a id="Assumptions"></a>
 # Assumptions and simplifications
@@ -138,7 +140,7 @@ MagneticFriction consists of multiple Matlab functions stored in their individua
 - **CalcHysteresis.m** Calculates the sum of the torques affecting the moments due to the substrate, the magnetization of the slider, and the average substrate field.
 - **CalcTorqueGrid.m** Evaluates and stores the total substrate torque acting on each moment of the slider separately. 
 
-To understand how MagneticFriction works, it is suggested to start by reading the main simulation loop in **MagneticArray.m**. If details for the specific function used in the main loop are needed, it is then possible to navigate to the correct subfile that contains the particular function.
+To understand how MagneticFriction works, it is suggested to start by reading the main simulation loop in **MagneticArray.m**. If details for the specific function used in the main loop are needed, it is then possible to navigate to the correct subfile that contains the particular function. See also [further information](#Info) for pseudocode.
 
  <a id="Info"></a>
 # Further information and examples
