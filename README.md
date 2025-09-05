@@ -113,9 +113,9 @@ All data are given in SI units. For each separation between the slider and the s
 
 Compared to the experimental setup of [1], MagneticFriction utilizes the following approximations and simplifications:
 
-- **Dipole interactions** All magnetic interactions between the cylinder-shaped magnets are modeled via classical dipole interactions.
-- **Stokes-like shaft friction** For the dissipation term $` f `$ that enters the equations of motion of the particular moments of the slider, a Stokes law $` f(\omega) = - \gamma \omega `$ is utilized.
-- **Angular velocity** The angular velocities of the particular moments are approximated via a simple difference quotient. Note that this angular velocity enters the integration step through the Stokes friction law that models the shaft friction. 
+- **Dipole interactions** All magnetic interactions between the ring- and cylinder-shaped magnets are modeled via classical point dipole interactions, ignoring the size and the shape of the real components.
+- **Stokes-like shaft friction** For the dissipation term $` f `$ that enters the equations of motion of the particular moments of the slider (see the main text and the **Methods section** of [1]), a Stokes law $` f(\omega) = - \gamma \omega `$ is utilized.
+- **Angular velocity** The angular velocities of the particular moments are approximated via a simple difference quotient. Note that this angular velocity enters the integration step through the Stokes friction law that models the shaft friction at each simulation step. 
 
 For a detailed description of the limitations of the simulations, see the supporting information of [1]. Note that MagneticFriction generates data with excellent qualitative and quantitative agreement with the experiments of [1].
 
