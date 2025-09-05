@@ -9,7 +9,8 @@ Here, we present heavily simplified pseudocode for the particular Matlab files o
 for each magnetic moment (i,j) on the slider {
 
     calculate the magnetic fields acting on (i,j) due to the other slider moments
-    calculate the magnetic fields action on (i,j) due to the sliders on the substrate
+
+    calculate the magnetic fields action on (i,j) due to the substrate moments
 
     (magnetic torque on (i,j)) = vector_product[(magnetic moment of (i,j)), (total magnetic field acting on (i,j))]
 }
@@ -38,5 +39,20 @@ for each magnetic moment (i,j) on the slider {
 ```pseudo
 
 (orientations at t + time_step) = 2 x (orientation at t) - (orientation at t - time_step) + (Stokes friction torque) x time_step^2 + (magnetic torques) x time_step^2
+
+```
+
+**CalcForce.m** 
+
+```pseudo
+
+for each magnetic moment (i,j) on the slider {
+
+    calculate the magnetic forces acting on (i,j) due to the other slider moments
+
+    calculate the magnetic force action on (i,j) due the substrate moments
+}
+
+forces = sum[(total magnetic forces acting on all slider moments)]
 
 ```
