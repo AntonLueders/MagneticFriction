@@ -13,6 +13,7 @@ The simulation software reproduces the qualitative and quantitative results of t
  - [How to interprete the generated data](#Data)
  - [Assumptions and simplifications](#Assumptions)
  - [Contents of the particular files](#Contents)
+ - [Further information and examples](#Info)
  - [Disclaimer](#Disclaimer)
  - [Additional folders independent of MagneticFriction](#Simplified)
  - [Cite this software](#Cite)
@@ -91,11 +92,21 @@ for scan=1:length(scan_value)
  <a id="What"></a>
  # What MagneticFriction does
 
-Detailed information about the simulation software is given in the Methods section and the supporting information of [1]. Using the defined parameters, the script generates a rigid array of magnetic moments (i.e., the slider) that hovers over a substrate of magnetic moments. Here, the magnetic moments of the slider can rotate in the xz-plane while the moments of the substrate are fixed. The dynamics of the moments of the slider are updated using a Molecular dynamics simulation scheme (Verlet algorithm) with an additional dissipation term, which models the shaft friction. After an equilibration time (defined by the user), the slider starts to translate over the substrate. Because of the magnetic interactions between the moments of the slider and between the slider and the substrate, magnetic torques act on the moments, and they start to rotate (in complex patterns) while the slider translates. The magnetic interactions between the moments are modeled via standard dipole interactions. During the sliding, the simulation code calculates observables, such as the total interaction force between the slider and the substrate. The total interaction force can be averaged to obtain the finite magnetic friction. The calculations are repeated for multiple different separations between the slider and the substrate.
- 
+Detailed information about the simulation software is given in the Methods section and the supporting information of [1]. Using the defined parameters, the script generates a rigid array of magnetic moments (i.e., the slider) that hovers over a substrate of magnetic moments. Here, the magnetic moments of the slider can rotate in the xz-plane while the moments of the substrate are fixed. The dynamics of the moments of the slider are updated using a Molecular dynamics simulation scheme (Verlet algorithm) with an additional dissipation term, which models the shaft friction. 
+
+After an equilibration time (defined by the user), the slider starts to translate over the substrate. Because of the magnetic interactions between the moments of the slider and between the slider and the substrate, magnetic torques act on the moments, and they start to rotate (in complex patterns) while translating. The magnetic interactions between the moments are modeled via standard dipole interactions. During the sliding, the simulation code calculates observables, such as the total interaction force between the slider and the substrate. The total interaction force can be averaged to obtain the finite magnetic friction. The calculations are repeated for multiple different separations between the slider and the substrate.
+
+<a id="Data"></a> 
  # How to interprete the generated data
 
-All data are given in SI units. For each separation between the slider and the substrate, the simulation software generates a **.mat** file, which stores the corresponding data. Given a predefined sampling rate (**Force_calc_rate** in **MagneticArray.m**), the codes stores for each sampling frame the corresponding simulation time (**time**), the current orientation of the moments (**array**), the magnetic interaction force between the slider and the substrate (**force** - x-component, y-component, z-component), the particular subsrate torques acting on the different moments of the slider (**torque_grid**), all information needed to extract the sum of the torques and the torque hysteresis (**hysteresis** - sum of torques acting on moments of sublattice one, sum of torque acting on sublattice two, x-component average magnetic field, y-component average magnetic field, z-component average magnetic field, x-component of the magnetization of sublattice one, y-component of the magnetization of sublattice one, z-component of the magnetization of sublattice one, x-component of the magnetization of sublattice two, y-component of the magnetization of sublattice two, z-component of the magnetization of sublattice two, see [1] for information on how the slider is divided in two sublattices and the simplified model), and the energy terms of the system (**energy** - internal magnetic energy, total interaction energy between the slider and the substrate).
+All data are given in SI units. For each separation between the slider and the substrate, the simulation software generates a **.mat** file, which stores the corresponding data. Given a predefined sampling rate (**Force_calc_rate** in **MagneticArray.m**), the codes stores for each sampling frame 
+
+- the corresponding simulation time (**time**),
+- the current orientation of the moments (**array**),
+- the magnetic interaction force between the slider and the substrate (**force** - x-component, y-component, z-component),
+- the particular subsrate torques acting on the different moments of the slider (**torque_grid**),
+- all information needed to extract the sum of the torques and the torque hysteresis (**hysteresis** - sum of torques acting on moments of sublattice one, sum of torque acting on sublattice two, x-component average magnetic field, y-component average magnetic field, z-component average magnetic field, x-component of the magnetization of sublattice one, y-component of the magnetization of sublattice one, z-component of the magnetization of sublattice one, x-component of the magnetization of sublattice two, y-component of the magnetization of sublattice two, z-component of the magnetization of sublattice two; see [1] for information on how the slider is divided in two sublattices and the simplified model),
+- and the energy terms of the system (**energy** - internal magnetic energy, total interaction energy between the slider and the substrate).
  
   <a id="Assumptions"></a>
 # Assumptions and simplifications
@@ -124,8 +135,14 @@ MagneticFriction consists of multiple Matlab functions stored in their individua
 - **CalcHysteresis.m** Calculates the sum of the torques affecting the moments due to the substrate, the magnetization of the slider, and the average substrate field.
 - **CalcTorqueGrid.m** Evaluates and stores the total torque acting on each moment of the slider separately. 
 
-
 To understand how MagneticFriction works, it is suggested to start by reading the main simulation loop in **MagneticArray.m**. If details for the specific function used in the main loop are needed, it is then possible to navigate to the correct subfile that contains the particular function.
+
+ <a id="Info"></a>
+# Further information and examples
+
+A detailed explanation of the parameters needed to run the simulations are given in [Parameters](docs/Parameter.md).
+
+Pseudocode for MagneticFriction can be found in [Pseudocode](docs/Pseudocode.md).
 
  <a id="Disclaimer"></a>
 # Disclaimer
