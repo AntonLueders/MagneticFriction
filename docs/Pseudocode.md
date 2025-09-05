@@ -8,9 +8,9 @@ Here, we present heavily simplified pseudocode for the particular Matlab files o
 
 for each magnetic moment (i,j) on the slider {
 
-    calculate the magnetic fields acting on (i,j) due to the other slider moments
+    calculates the magnetic fields acting on (i,j) due to the other slider moments
 
-    calculate the magnetic fields action on (i,j) due to the substrate moments
+    calculates the magnetic fields action on (i,j) due to the substrate moments
 
     (magnetic torque on (i,j)) = vector_product[(magnetic moment of (i,j)), (total magnetic field acting on (i,j))]
 }
@@ -48,11 +48,59 @@ for each magnetic moment (i,j) on the slider {
 
 for each magnetic moment (i,j) on the slider {
 
-    calculate the magnetic forces acting on (i,j) due to the other slider moments
+    calculates the magnetic forces acting on (i,j) due to the other slider moments
 
-    calculate the magnetic force action on (i,j) due the substrate moments
+    calculates the magnetic force action on (i,j) due the substrate moments
 }
 
 forces = sum[(total magnetic forces acting on all slider moments)]
+
+```
+
+**CalcEnergy.m** 
+
+```pseudo
+
+(energy of the slider) = 0
+(slider-substrate interaction energy) = 0
+
+for each magnetic moment (i,j) on the slider {
+
+    calculates the magnetic fields acting on (i,j) due to the other slider moments
+    (energy of the probe) = (energy of the probe) - dot_product[(magnetic moment of (i,j)), (magnetic field due to slider moments acting on (i,j))]
+
+    calculates the magnetic fields action on (i,j) due the substrate moments
+    (slider-substrate interaction energy) = (slider-substrate interaction energy) - dot_product[(magnetic moment of (i,j)), (magnetic field due to substrate moments acting on (i,j))]
+}
+
+```
+
+**CalcHysteresis.m** 
+
+```pseudo
+
+(sum of magnetic fields) = 0
+(sum of torques on sublattice 1) = 0
+(sum of torques on sublattice 2) = 0
+
+for each magnetic moment (i,j) on the slider {
+
+    calculates the magnetic fields action on (i,j) due the substrate moments
+
+    (sum of magnetic fields) = (sum of magnetic fields) + (total substrate field acting on (i,j))
+
+    if (i,j) is on sublattice 1 {
+        (sum of torques on sublattice 1) = (sum of torques on sublattice 1) + vector_product[(magnetic moment of (i,j)), (total substrate field acting on (i,j))]
+    }
+    if (i,j) is on sublattice 2 {
+        (sum of torques on sublattice 2) = (sum of torques on sublattice 2) + vector_product[(magnetic moment of (i,j)), (total substrate field acting on (i,j))]
+    } 
+}
+
+calculates the average field per slider moment using (sum of magnetic fields)
+calculates the average torque on sublattice 1 using (sum of torques on sublattice 1)
+calculates the average torque on sublattice 2 using (sum of torques on sublattice 2)
+calculates the magnetization of sublattice 1
+calculates the magnetization of sublattice 2
 
 ```
