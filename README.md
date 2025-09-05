@@ -77,7 +77,7 @@ start_t_time = 0.5;     % [s] Time before the translation starts
 .
 
 ```
-scan_value=0.0050:0.0001:0.013; % Varied paramter of the simulations
+scan_value = 0.0050:0.0001:0.013; % Varied paramter of the simulations
 
 for scan=1:length(scan_value)
     
