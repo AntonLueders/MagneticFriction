@@ -14,9 +14,9 @@
 %          BioNano-Physics                                                %
 %          Univesity of Innsbruck                                         %
 %                                                                         %
-%          Last edited: 30.05.2025                                        %
+%          Last edited: 06.09.2025                                        %
 %                                                                         %
-%          V2.0.0                                                         %
+%          V2.0.1                                                         %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -89,13 +89,13 @@ for scan=1:length(scan_value)
 % Init of variables
 %%=======================================================================%%
     
-    magnet_array_0 = zeros(dim_x, dim_y);
-    magnet_array_0(1:2:dim_x,:) = 0 + ...
-        pi/24 * (rand(length(1:2:dim_x),dim_y) - 0.5);
-    magnet_array_0(2:2:dim_x,:) = pi +...
-        pi/24 * (rand(length(2:2:dim_x),dim_y) - 0.5);
-    velocity_array_0 = zeros(dim_x, dim_y);   % Initial velocity = 0
-    torques_0 = zeros(dim_x, dim_y);
+    magnet_array_0 = zeros(dim_y, dim_x);
+    magnet_array_0(1:2:dim_y,:) = 0 + ...
+        pi/24 * (rand(length(1:2:dim_y),dim_x) - 0.5);
+    magnet_array_0(2:2:dim_y,:) = pi +...
+        pi/24 * (rand(length(2:2:dim_y),dim_x) - 0.5);
+    velocity_array_0 = zeros(dim_y, dim_x);   % Initial velocity = 0
+    torques_0 = zeros(dim_y, dim_x);
     
     magnet_array_1 = magnet_array_0 + velocity_array_0 * time_step ...
         + 1 / 2 * torques_0 * time_step^2;    % Needed for Verlet algorithm
@@ -103,17 +103,17 @@ for scan=1:length(scan_value)
     angular_velocity = CalcVelocity(magnet_array_0, ... 
             magnet_array_1, time_step);           
     
-    substrat_array = angle_substrat * ones((substrat_dim_y + 1) * dim_x,...
-        (substrat_dim_x + 1) * dim_y);
+    substrat_array = angle_substrat * ones((substrat_dim_y + 1) * dim_y,...
+        (substrat_dim_x + 1) * dim_x);
     
 % Set coordinates of the spins on the probe ==============================%
     
-    pos_in_grid_x = zeros(dim_x, dim_y);
+    pos_in_grid_x = zeros(dim_y, dim_x);
     for x = 1:dim_x
         pos_in_grid_x(:,x) = (x - 1) * lattice_constant_x + shift_x;
     end
     
-    pos_in_grid_y = zeros(dim_x, dim_y);
+    pos_in_grid_y = zeros(dim_y, dim_x);
     for y = 1:dim_y
         pos_in_grid_y(y,:) = - (y - 1) * lattice_constant_y ...
             + (dim_y - 1) * lattice_constant_y + shift_y;
@@ -134,8 +134,8 @@ for scan=1:length(scan_value)
             (substrat_dim_x / 2) * dim_x * lattice_constant_x;
     end
     
-    pos_substrat_y = zeros((substrat_dim_y + 1) * dim_x, ...
-        (substrat_dim_x + 1) * dim_y);
+    pos_substrat_y = zeros((substrat_dim_y + 1) * dim_y, ...
+        (substrat_dim_x + 1) * dim_x);
     for y = 1:(substrat_dim_y + 1) * dim_y
         pos_substrat_y(y,:) = - (y - 1) * lattice_constant_y + ...
             ((substrat_dim_y / 2) * dim_y + ...
@@ -151,10 +151,10 @@ for scan=1:length(scan_value)
     
 % Variables for saving temporary results =================================%
     
-    magnet_array_0_temp = zeros(dim_x, dim_y);
-    magnet_array_1_temp = zeros(dim_x, dim_y);
-    pos_in_grid_x_temp = zeros(dim_x, dim_y);
-    pos_in_grid_y_temp = zeros(dim_x, dim_y);
+    magnet_array_0_temp = zeros(dim_y, dim_x);
+    magnet_array_1_temp = zeros(dim_y, dim_x);
+    pos_in_grid_x_temp = zeros(dim_y, dim_x);
+    pos_in_grid_y_temp = zeros(dim_y, dim_x);
     
     data = {};     % Initialize a cell array to store the data
     
