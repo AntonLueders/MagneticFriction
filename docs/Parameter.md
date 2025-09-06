@@ -56,9 +56,9 @@ scan_value = 0.0050:0.0001:0.013; % Varied paramter of the simulations
 .
 .
 
-All parameter presented in the example above are the ones utilized to perform the simulations discussed in [1]. Please check the corresponding main text and the supporting information of [1] for further information. 
+All parameters presented in the example above are the ones utilized to perform the simulations discussed in [1]. Please check the corresponding main text and the supporting information of [1] for further information. 
 
-The particular parameters that must be set to succesfully perform a simulation with **MagneticFriction** have the following meaning:
+The particular parameters that must be set to successfully perform a simulation with **MagneticFriction** have the following meaning:
 
 - **friction_coefficient:** This is the friction coefficient of the Stokes-like shaft friction. It is a free parameter of the simulations and should be chosen to maintain stability, match the experimental friction, and sustain overdamped dynamics.
 - **moment_of_inertia:** This parameter is the moment of inertia of the magnetic moments of the slider. The value used in [1] is estimated by assuming a homogeneous mass and utilizing the ring magnet geometry of the experimental setup.
@@ -69,7 +69,7 @@ The particular parameters that must be set to succesfully perform a simulation w
 - **lattice_constant_y:** Distance between magnetic moments on the slider in the y-direction. The values are matched to the experiments. The code is only tested for square lattices.
 - **v_x:** Translational velocity in x-direction. This value is matched to the sliding speed of the experiments in [1].
 - **v_y:** Translational velocity in y-direction. Should be set to zero to reproduce the results of [1]
-- **substrat_dim_x:** Number of magnetic moments on the substrate in multiples of *dim_x*. Always use an even value (the code is not tested for odd values). The exact number of substrate moments in x-direction can be calculated by (*substrate_dim_x* + 1) x *dim_x*. Note that the source code is only tested for systems where *substrat_dim_x* is equal to *substrat_dim_y*. The number of magnets on the substrate is not matched to the experiments but freely chosen.
+- **substrat_dim_x:** Number of magnetic moments on the substrate in multiples of *dim_x*. Always use an even value (the code is not tested for odd values). The exact number of substrate moments in the x-direction can be calculated by (*substrate_dim_x* + 1) x *dim_x*. Note that the source code is only tested for systems where *substrat_dim_x* is equal to *substrat_dim_y*. The number of magnets on the substrate is not matched to the experiments but freely chosen.
 - **substrat_dim_y:** Number of magnetic moments on the substrate in multiples of *dim_y*. Always use an even value (the code is not tested for odd values). The exact number of substrate moments in the y-direction can be calculated by (*substrate_dim_y* + 1) x *dim_y*. Note that the source code is only tested for systems where *substrat_dim_x* is equal to *substrat_dim_y*. The number of magnets on the substrate is not matched to the experiments but freely chosen.
 - **angle_substrat:** Orientation angle of the substrate moments in the xz-plane. The value 0 corresponds to moments that align with the x-axis.
 - **magnetic_moment_sub:** Magnitude of the magnetic moments on the substrate. For [1], this value is approximated by using the magnetization of the magnetic material used in the experiments and the volume of the cylinder-shaped substrate magnets.
