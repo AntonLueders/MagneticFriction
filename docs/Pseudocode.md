@@ -1,4 +1,4 @@
-Here, we present heavily simplified pseudocode for the particular Matlab files of **MagneticFriction** to highlight the basic principles behind the simulations. However, please see the [README](../README.md) and the supporting information of [1] for more informations.
+Here, we present heavily simplified pseudocode for the particular MATLAB files of **MagneticFriction** to highlight the basic principles behind the simulations. However, please see the [README](../README.md) and the supporting information of [1] for more information.
 
 
 
