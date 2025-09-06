@@ -79,7 +79,7 @@ start_t_time = 0.5;     % [s] Time before the translation starts
 calc_force = 1;            % If = 1, The force is calculated and printed
 Force_calc_rate = 0.001;   % [s] Rate for printing force in files
 
-scan_value=0.0050:0.0001:0.013; % Varied paramter of the simulations
+scan_value = 0.0050:0.0001:0.013; % Varied paramter of the simulations
 
 for scan=1:length(scan_value)
     
