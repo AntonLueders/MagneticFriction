@@ -24,14 +24,14 @@ for k = 1:length(c_int)
     % Values are matched to the experimental setup using the relations
     % derived in the supporting information 
     a = 3 * 21 * 50.99;
-    b = 42 * 50.99 + 18/sqrt(2) * 50.99;
+    b = 42 * 50.99;
     c = 0.5 * 42 * 2.2987 * 10^(-4) * 1/c_int(k)^3;
     
     % Angular velocity omega = k*v, matched to the experiments
     omega = pi;
     % Heuristic friction coefficient of the shaft friction. Value is chosen
     % for maximum stability and to see the three regimes
-    gamma = 4.7;
+    gamma = 3.8;
     
     ode = @(t,angle_data) angle_diff_eq(t, angle_data, a, b, c, ...
         omega, gamma);
@@ -114,3 +114,4 @@ writematrix(num2str([c_int' * 10^3, -diss_energy' * 10^(-6) / 0.016],...
 writematrix(num2str([c_int' * 10^3, order'],...
     '%.4f '),'ycoupleSimplifiedModel.dat',...
          'Delimiter', 'tab')
+
