@@ -110,7 +110,7 @@ All data are given in SI units. For each separation between the slider and the s
 - the magnetic interaction force between the slider and the substrate (**force** - x-component, y-component, z-component),
 - the particular subsrate torques acting on the different moments of the slider (**torque_grid**),
 - all information needed to extract the sum of the torques and the torque hysteresis (**hysteresis** - sum of torques acting on moments of sublattice one, sum of torque acting on sublattice two, x-component average magnetic field, y-component average magnetic field, z-component average magnetic field, x-component of the magnetization of sublattice one, y-component of the magnetization of sublattice one, z-component of the magnetization of sublattice one, x-component of the magnetization of sublattice two, y-component of the magnetization of sublattice two, z-component of the magnetization of sublattice two; see [1] for information on how the slider is divided in two sublattices and the simplified model),
-- and the energy terms of the system (**energy** - internal magnetic energy, total interaction energy between the slider and the substrate).
+- and the energy terms of the system (**energy** - *twice* the internal magnetic energy, total interaction energy between the slider and the substrate).
 
 See also [further information](#Info) for examples on how to analyze the output data from **MagneticFriction**.
  
