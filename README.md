@@ -135,7 +135,7 @@ MagneticFriction consists of multiple MATLAB functions stored in their individua
 - **CalcTorque.m** Calculates the total torque (shaft friction, internal magnetic interactions of the slider, and torques resulting from the substrate). These torques are used to update the angles of the moments in the integration step.
 - **Move.m** Integration step based on the Verlet algorithm.
 - **Translate.m** Moves the slider relative to the substrate.
-- **CalcForce.m** Calculates the total magnetic forces acting on the slider. The average of the x-component of this force is the magnetic friction.
+- **CalcForce.m** Calculates *twice* tthe total magnetic forces acting on the slider. The average of the x-component of this force is the magnetic friction.
 - **CalcEnegery.m** Determines the total internal interaction energy of the slider and the total energy of the interactions between the slider and the substrate.
 - **CalcHysteresis.m** Calculates the sum of the torques affecting the moments due to the substrate, the magnetization of the slider, and the average substrate field.
 - **CalcTorqueGrid.m** Evaluates and stores the total substrate torque acting on each moment of the slider separately. 
