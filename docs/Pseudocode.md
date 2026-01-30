@@ -64,7 +64,7 @@ for each magnetic moment (i,j) on the slider {
 
 ```pseudo
 
-(orientations at t + time_step) = 2 x (orientations at t) - (orientations at t - time_step) + (Stokes friction torques) x time_step^2 + (magnetic torques) x time_step^2
+(orientations at t + time_step) = 2 x (orientations at t) - (orientations at t - time_step) + (Stokes friction torques) / (moment of inertia) x time_step^2 + (magnetic torques) / (moment of inertia) x time_step^2
 
 ```
 
