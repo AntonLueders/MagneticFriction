@@ -12,7 +12,7 @@ If the simulations are successful, three **.mat** files can be found in the fold
 
 **2) Calculate the average magnetic friction**
 
-Copy the file **Example_Avg_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average magnetic frictions corresponding to the **.mat** files. For instance, if the slider-substrate separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -0.21N, 1.33N, and -0.0045N, respectively. 
+Copy the file **Example_Avg_Force.m** (see example folder) into the folder that contains the **.mat** files obtained from the simulations. Run the example script with MATLAB. If the calculations are successful, the MATLAB console gives the average magnetic frictions corresponding to the **.mat** files. For instance, if the slider-substrate separations 6.5mm, 8.5mm, and 11.0mm of the other examples are used, the results should be roughly -0.21N, -1.33N, and -0.0045N, respectively. 
 
 **3) Calculate the average total friction**
 
