@@ -6,6 +6,8 @@ MagneticFriction is a many-body simulation software that calculates the magnetic
 
 The simulation software reproduces the qualitative and quantitative results of the experiments of [1] remarkably well. All information and methods employed by MagneticFriction are described in detail in the supporting information of [1]. While MagneticFriction can be used to repeat the corresponding simulations, we strongly encourage a full independent reproduction using the information in said supplemental information. 
 
+[![DOI](https://zenodo.org/badge/959167069.svg)](https://doi.org/10.5281/zenodo.18487550)
+
 # Table of contents:
  - [Requirements](#Requirements)
  - [How to use MagneticFriction](#Use)
