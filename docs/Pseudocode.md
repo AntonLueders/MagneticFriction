@@ -172,4 +172,4 @@ for each magnetic moment (i,j) on the slider {
 
 ```
 
-[1] *Nonmonotonic Magnetic Friction from Collective Rotor Dynamics* by Hongri Gu, Anton Lüders, and Clemens Bechinger.
+[1] Gu, H., Lüders, A. & Bechinger, C. *Non-monotonic magnetic friction from collective rotor dynamics*. Nat. Mater. (2026). https://doi.org/10.1038/s41563-026-02538-1
